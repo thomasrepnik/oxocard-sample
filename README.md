@@ -1,6 +1,6 @@
 # Oxocard Sample
 
-This is a small project that requires an Oxocard Science. The project displays an avatar whose appearance changes based on various influences.
+This is a small project that requires an [Oxocard Science](https://www.oxocard.ch/science/). The project displays an avatar whose appearance changes based on various environmental influences.
 
 
 Normal state:
