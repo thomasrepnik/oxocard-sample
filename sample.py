@@ -93,6 +93,18 @@ headlight:byte[24*24] = [
 ]
 
 # image
+sweat:byte[8*8] = [
+0,0,0,184,0,0,0,0,
+0,0,0,184,0,0,0,0,
+0,0,184,184,184,0,0,0,
+0,184,184,184,184,184,0,0,
+0,184,184,184,184,184,0,0,
+0,0,184,184,184,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0
+]
+
+# image
 vomit:byte[24*24] = [
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -167,7 +179,6 @@ class Sickness:
                     return true   
 
             
-        print("NOT SICK")
         return false
 
 
@@ -183,7 +194,6 @@ class Person:
         translate(125, 40)
         scale(3)
         drawSprite(0,0,24,24,headlight)
-        print("headlights ON")
         pop()
     
     def drawSunglasses():
@@ -198,6 +208,34 @@ class Person:
         translate(122, 82)
         scale(4.1)
         drawSprite(2,11,24,24,vomit)
+        pop()
+
+    def drawSweating():
+        # drop 1
+        push()
+        translate(100, 55)
+        scale(2)
+        drawSprite(0,0,8,8,sweat)
+        pop()
+
+        # drop 2
+        push()
+        translate(150, 70)
+        scale(2)
+        drawSprite(0,0,8,8,sweat)
+        pop()
+
+        # drop 3
+        push()
+        translate(105, 90)
+        scale(2)
+        drawSprite(0,0,8,8,sweat)
+        pop()
+
+        push()
+        fill(255,0,0)
+        noStroke()
+        drawRectangle(120,95,7,12)
         pop()
     
 
@@ -218,8 +256,8 @@ class Person:
 
         sickness.record()
 
-        
-
+        if getTemperature() > 26:
+            drawSweating()        
 
 class Text:
     def draw(): 
