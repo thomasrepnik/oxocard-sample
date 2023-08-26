@@ -274,8 +274,8 @@ class Countdown:
     def draw():
         push()
         translate(120,200)
+        textFont(FONT_ROBOTO_16)
         if isConnected():
-            textFont(FONT_ROBOTO_16)
             returnDate:dateTime
             returnDate.setDate(3,6,2024)
 
